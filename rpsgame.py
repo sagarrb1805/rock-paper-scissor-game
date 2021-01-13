@@ -1,12 +1,11 @@
 import random
 
 item_list = ['Rock', 'Paper', 'Scissor']
-run = True
 
 com_point = 0
 player_point = 0
 
-while run:
+while True:
     com_player = random.choice(item_list).lower()
 
     player = input(' \n enter your choice: Rock, Paper, Scissor, Quit: ').lower()
