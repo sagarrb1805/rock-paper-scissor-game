@@ -1,40 +1,58 @@
 import random
 
 item_list = ['Rock', 'Paper', 'Scissor']
+run = True
 
-com_player = random.choice(item_list).lower()
+com_point = 0
+player_point = 0
 
-player = input('enter your choice: Rock, Paper, Scissor, Quit').lower()
+while run:
+    com_player = random.choice(item_list).lower()
 
-if player == com_player:
-    print('Tie')
+    player = input(' \n enter your choice: Rock, Paper, Scissor, Quit: ').lower()
 
-elif player == 'rock' and com_player == 'paper':
-    print(com_player)
-    print('com win')
+    if player == com_player:
+        print(' Tie')
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-elif player == 'rock' and com_player == 'scissor':
-    print(com_player)
-    print('player win')
+    elif player == 'rock' and com_player == 'paper':
+        print('', com_player)
+        print(' com win')
+        com_point += 1
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-elif player == 'paper' and com_player == 'rock':
-    print(com_player)
-    print('player win')
+    elif player == 'rock' and com_player == 'scissor':
+        print('', com_player)
+        print(' player win')
+        player_point += 1
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-elif player == 'paper' and com_player == 'scissor':
-    print(com_player)
-    print('com win')
+    elif player == 'paper' and com_player == 'rock':
+        print('', com_player)
+        print(' player win')
+        player_point += 1
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-elif player == 'scissor' and com_player == 'rock':
-    print(com_player)
-    print('com win')
+    elif player == 'paper' and com_player == 'scissor':
+        print('', com_player)
+        print(' com win')
+        com_point += 1
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-elif player == 'scissor' and com_player == "paper":
-    print(com_player)
-    print('player win')
+    elif player == 'scissor' and com_player == 'rock':
+        print('', com_player)
+        print(' com win')
+        com_point += 1
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-elif player == 'quit':
-    quit()
+    elif player == 'scissor' and com_player == "paper":
+        print('', com_player)
+        print(' player win')
+        player_point += 1
+        print(' Point table: \n Computer:{}  Player:{}'.format(com_point, player_point))
 
-else:
-    print('invalid input')
+    elif player == 'quit':
+        quit()
+
+    else:
+        print(' invalid input')
