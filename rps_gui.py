@@ -47,29 +47,32 @@ def compare():
     elif rock and com_paper:
         winner_label.configure(text='computer won point')
         computer_point += 1
+        com_point_label.configure(text='Computer: {}'.format(computer_point))
 
     elif rock and com_scissor:
         winner_label.configure(text=' player won point ')
         player_point += 1
+        player_point_label.configure(text='Player: {}'.format(player_point))
 
     elif paper and com_rock:
         winner_label.configure(text=' player won point ')
         player_point += 1
+        player_point_label.configure(text='Player: {}'.format(player_point))
 
     elif paper and com_scissor:
         winner_label.configure(text='computer won point')
         computer_point += 1
+        com_point_label.configure(text='Computer: {}'.format(computer_point))
 
     elif scissor and com_rock:
         winner_label.configure(text='computer won point')
         computer_point += 1
+        com_point_label.configure(text='Computer: {}'.format(computer_point))
 
     elif scissor and com_paper:
         winner_label.configure(text=' player won point ')
         player_point += 1
-
-
-
+        player_point_label.configure(text='Player: {}'.format(player_point))
 
 
 def random_select():
@@ -141,8 +144,13 @@ paper_btn.place(x=410, y=250)
 Scissor_btn = Button(root, text='Scissor', width=6, bg='blue', fg='black', command=scissor_select)
 Scissor_btn.place(x=500, y=250)
 
-winner_label = Label(root,text='     winner is    ', font=('arial', 25, 'bold'))
+winner_label = Label(root, text='     winner is    ', font=('arial', 25, 'bold'))
 winner_label.place(x=120, y=300)
 
+com_point_label = Label(root, text='Computer: {}'.format(computer_point), font=('arial', 25, 'bold'))
+com_point_label.place(x=15, y=400)
+
+player_point_label = Label(root, text='player: {}'.format(player_point), font=('arial', 25, 'bold'))
+player_point_label.place(x=320, y=400)
 
 root.mainloop()
